@@ -99,7 +99,7 @@ class ManageStarships extends Command
             placeholder: 'E.g. Saturn',
             options: fn(string $value) => strlen($value) > 0
             ? TradeRoute::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-            : [],
+            : TradeRoute::pluck('name', 'id')->all()
         );
 
 
@@ -130,7 +130,7 @@ class ManageStarships extends Command
             placeholder: 'E.g. Saturn',
             options: fn(string $value) => strlen($value) > 0
             ? Starship::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-            : [],
+            : Starship::pluck('name', 'id')->all()
         );
 
         if (!$starshipId) {
@@ -195,7 +195,7 @@ class ManageStarships extends Command
                 placeholder: 'E.g. Saturn',
                 options: fn(string $value) => strlen($value) > 0
                 ? TradeRoute::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : TradeRoute::pluck('name', 'id')->all()
             );
 
             if (!$newAssignedRouteId) {
@@ -229,7 +229,7 @@ class ManageStarships extends Command
             placeholder: 'E.g. Saturn',
             options: fn(string $value) => strlen($value) > 0
             ? Starship::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-            : [],
+            : Starship::pluck('name', 'id')->all()
         );
 
         if (!$starship) {

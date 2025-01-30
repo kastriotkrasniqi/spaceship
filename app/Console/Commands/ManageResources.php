@@ -91,7 +91,7 @@ class ManageResources extends Command
             placeholder: 'E.g. Saturn',
             options: fn (string $value) => strlen($value) > 0
                 ? Resource::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : Resource::pluck('name', 'id')->all(),
         );
 
         if (!$resourceId) {
@@ -126,7 +126,7 @@ class ManageResources extends Command
             placeholder: 'E.g. Saturn',
             options: fn (string $value) => strlen($value) > 0
                 ? Resource::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : Resource::pluck('name', 'id')->all(),
         );
 
         if (!$resource) {

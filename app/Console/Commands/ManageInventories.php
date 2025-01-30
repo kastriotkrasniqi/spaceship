@@ -71,7 +71,7 @@ class ManageInventories extends Command
             placeholder: 'E.g. Earth',
             options: fn(string $value) => strlen($value) > 0
                 ? Planet::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : Planet::pluck('name', 'id')->all(),
         );
 
         if (!$planetId) {
@@ -84,7 +84,7 @@ class ManageInventories extends Command
             placeholder: 'E.g. Water',
             options: fn(string $value) => strlen($value) > 0
                 ? Resource::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : Resource::pluck('name', 'id')->all(),
         );
 
         if (!$resourceId) {
@@ -124,7 +124,7 @@ class ManageInventories extends Command
             placeholder: 'E.g. 1',
             options: fn(string $value) => strlen($value) > 0
                 ? Inventory::whereLike('id', "%{$value}%")->pluck('id', 'id')->all()
-                : [],
+                : Inventory::pluck('id', 'id')->all(),
         );
 
         if (!$inventoryId) {
@@ -185,7 +185,7 @@ class ManageInventories extends Command
             placeholder: 'E.g. 1',
             options: fn(string $value) => strlen($value) > 0
                 ? Inventory::whereLike('id', "%{$value}%")->pluck('id', 'id')->all()
-                : [],
+                : Inventory::pluck('id', 'id')->all(),
         );
 
         if (!$inventoryId) {

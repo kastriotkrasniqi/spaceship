@@ -91,7 +91,7 @@ class ManageTradeAgreements extends Command
             placeholder: 'E.g. Earth',
             options: fn(string $value) => strlen($value) > 0
             ? Planet::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-            : [],
+            : Planet::pluck('name', 'id')->all()
         );
 
         if (!$originPlanetId) {
@@ -108,7 +108,7 @@ class ManageTradeAgreements extends Command
                         ->pluck('name', 'id')
                         ->except($originPlanetId)
                         ->all()
-                    : [];
+                    :  Planet::pluck('name', 'id')->except($originPlanetId)->all();
             }
         );
 
@@ -190,7 +190,7 @@ class ManageTradeAgreements extends Command
             placeholder: 'E.g. 1',
             options: fn(string $value) => strlen($value) > 0
             ? TradeAgreement::whereLike('id', "%{$value}%")->pluck('id', 'id')->all()
-            : [],
+            : TradeAgreement::pluck('id', 'id')->all()
         );
 
         if (!$tradeAgreementId) {
@@ -224,7 +224,7 @@ class ManageTradeAgreements extends Command
                     placeholder: 'E.g. Earth',
                     options: fn(string $value) => strlen($value) > 0
                     ? Planet::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                    : [],
+                    : Planet::pluck('name', 'id')->all()
                 );
 
                 if (!$originPlanetId) {
@@ -258,7 +258,10 @@ class ManageTradeAgreements extends Command
                             ->pluck('resource_id', 'resource_id')
                             ->mapWithKeys(fn($id) => [$id => Resource::find($id)->name])
                             ->toArray()
-                        : [];
+                        : Inventory::where('planet_id', $originPlanetId)
+                            ->pluck('resource_id', 'resource_id')
+                            ->mapWithKeys(fn($id) => [$id => Resource::find($id)->name])
+                            ->toArray();
                 }
             );
 
@@ -278,7 +281,7 @@ class ManageTradeAgreements extends Command
                 options: function (string $value) use($tradeAgreement) {
                     return strlen($value) > 0
                         ? Planet::whereLike('name', "%{$value}%")->pluck('name', 'id')->except($tradeAgreement->origin_id)->all()
-                        : [];
+                        : Planet::pluck('name', 'id')->except($tradeAgreement->origin_id)->all();
                 }
             );
 
@@ -349,7 +352,7 @@ class ManageTradeAgreements extends Command
             placeholder: 'E.g. 1',
             options: fn(string $value) => strlen($value) > 0
             ? TradeAgreement::whereLike('id', "%{$value}%")->pluck('id', 'id')->all()
-            : [],
+            : TradeAgreement::pluck('id', 'id')->all()
         );
 
         if (!$agreementId) {

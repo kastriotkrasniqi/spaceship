@@ -88,7 +88,7 @@ class ManagePlanets extends Command
             placeholder: 'E.g. Saturn',
             options: fn (string $value) => strlen($value) > 0
                 ? Planet::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : Planet::pluck('name', 'id')->all(),
         );
 
         if (!$planetId) {
@@ -121,7 +121,7 @@ class ManagePlanets extends Command
             placeholder: 'E.g. Saturn',
             options: fn (string $value) => strlen($value) > 0
                 ? Planet::whereLike('name', "%{$value}%")->pluck('name', 'id')->all()
-                : [],
+                : Planet::pluck('name', 'id')->all(),
         );
 
         if (!$planet) {
