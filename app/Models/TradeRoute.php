@@ -2,15 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class TradeRoute extends Model
 {
-    /** @use HasFactory<\Database\Factories\TradeRouteFactory> */
-    use HasFactory;
-
-
     protected $fillable = [
         'name',
         'origin_id',
@@ -19,10 +14,13 @@ class TradeRoute extends Model
         'quantity',
         'travel_time',
         'created_at',
-        'updated_at',
+        'updated_at'
     ];
 
-
+    public function starship()
+    {
+        return $this->hasOne(Starship::class, 'assigned_route_id');
+    }
 
     public function origin()
     {
@@ -36,6 +34,6 @@ class TradeRoute extends Model
 
     public function resource()
     {
-        return $this->belongsTo(Resource::class, 'resource_id');
+        return $this->belongsTo(Resource::class);
     }
 }

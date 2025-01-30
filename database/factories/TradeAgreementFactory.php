@@ -25,6 +25,7 @@ class TradeAgreementFactory extends Factory
             'quantity' => fake()->numberBetween(100, 1000),
             'frequency' => fake()->numberBetween(1, 10),
             'next_delivery' => now()->addDays(fake()->numberBetween(1, 30)),
+            'travel_time' => now()->addDays(fake()->numberBetween(1,30)),
         ];
     }
 }

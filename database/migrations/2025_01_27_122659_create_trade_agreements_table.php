@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('frequency')->comment('in days');
             $table->date('next_delivery')->nullable();
+            $table->integer('travel_time')->comment('in hours');
             $table->timestamps();
         });
     }

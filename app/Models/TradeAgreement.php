@@ -18,6 +18,7 @@ class TradeAgreement extends Model
         'quantity',
         'frequency',
         'next_delivery',
+        'travel_time',
         'created_at',
         'updated_at',
     ];
@@ -37,4 +38,6 @@ class TradeAgreement extends Model
     {
         return $this->belongsTo(Resource::class, 'resource_id');
     }
+
+
 }
