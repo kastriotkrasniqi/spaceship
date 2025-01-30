@@ -1,66 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Space Trader
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A web application for managing your space trading empire.
 
-## About Laravel
+## Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Space Trader is a comprehensive space trading simulation that combines resource management, strategic planning, and dynamic event handling. Take control of your fleet, negotiate trade agreements, and navigate through challenging space conditions to become a successful space trading mogul.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Core Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Fleet Management
+- Create and manage multiple starships with unique capabilities
+- Monitor ship status and maintenance requirements
+- Assign ships to specific trade routes
 
-## Learning Laravel
+### Resource Trading System
+- Manage diverse space resources and commodities
+- Real-time inventory tracking across multiple locations
+- Dynamic pricing based on supply and demand
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Interplanetary Commerce
+- Establish trade agreements between different planets
+- Create and optimize trade routes
+- Monitor and analyze trade performance
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Dynamic Events
+- Real-time event simulation (meteor storms, space weather)
+- Route adjustments based on environmental conditions
+- Risk management and contingency planning
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Analytics and Reporting
+- Comprehensive trade statistics
+- Performance metrics for routes and ships
+- Resource demand analysis
 
-## Laravel Sponsors
+### Multi-User Support
+- Role-based access control
+- Customizable user permissions
+- Secure authentication system
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Technical Requirements
 
-### Premium Partners
+- PHP 8.1 or higher
+- Composer
+- SQLite/MySQL/PostgreSQL
+- Node.js and NPM for frontend assets
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone [repository-url]
+   cd spaceship
+   ```
+
+2. Install PHP dependencies:
+   ```bash
+   composer install
+   ```
+
+3. Configure environment:
+   - Copy `.env.example` to `.env`
+   - Update database credentials in `.env`
+   - Generate application key: `php artisan key:generate`
+
+4. Set up the database:
+   ```bash
+   php artisan migrate
+   php artisan db:seed
+
+## Command Line Interface
+
+### Planets Management
+- View planets: `php artisan planets` → Show Planets
+- Add planet: `php artisan planets` → Add Planet
+- Edit planet: `php artisan planets` → Update Planet
+- Delete planet: `php artisan planets` → Delete Planet
+
+### Starship Operations
+- View fleet: `php artisan starships` → Show Starships
+- Add ship: `php artisan starships` → Add Starship
+- Edit ship: `php artisan starships` → Update Starship
+- Delete ship: `php artisan starships` → Delete Starship
+
+### Resource Management
+- View resources: `php artisan resources` → Show Resources
+- Add resource: `php artisan resources` → Add Resource
+- Edit resource: `php artisan resources` → Update Resource
+- Delete resource: `php artisan resources` → Delete Resource
+
+### Trade Agreements
+- View agreements: `php artisan trade-agreements` → Show Trade Agreements
+- Create agreement: `php artisan trade-agreements` → Add Trade Agreement
+- Edit agreement: `php artisan trade-agreements` → Update Trade Agreement
+- Delete agreement: `php artisan trade-agreements` → Delete Trade Agreement
+
+### Inventory Control
+- View inventory: `php artisan inventories` → Show Inventories
+- Add inventory: `php artisan inventories` → Add Inventory
+- Edit inventory: `php artisan inventories` → Update Inventory
+- Delete inventory: `php artisan inventories` → Delete Inventory
+
+### Analytics
+- View trade analytics: `php artisan trade-analytics` → Show Trade Analytics
+
+
+### Space Weather
+- View space weather: `php artisan space-weather` → Show Space Weather
+
+### Track Starships
+- View starships: `php artisan track-starships` → Show Starships
+
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the LICENSE file for details.
